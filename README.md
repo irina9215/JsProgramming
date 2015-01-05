@@ -15,3 +15,16 @@ Learning Note
 4. 数组
    value 与 具有唯一性的key，需要以key访问value。key通常以0开始，逐次加一。数字编号键又被称为索引index。
    二维数组：数组里的数组，具有行与列的列表。table。
+5. 变量
+   可以对引用类型动态添加属性：
+   var person = new Object;
+   person.name = "irina";
+   alert(person.name);
+结果：irina
+
+    不能给基本类型添加属性：
+    var name = "irina";
+    name.age = 23;
+    alert("name.age");
+    
+结果：undefined
