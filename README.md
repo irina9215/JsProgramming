@@ -52,6 +52,39 @@ Learning Note
   
   changeColor();
   
-  alert("Color is now " + color);
+涉及的三个执行环境：全局环境、changeColor()的局部环境和swapColor（）的局部环境。
+  内部环境可以通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。
+7. 延长作用域链：在作用域链的前端临时增加一个变量对象，该变量会在代买执行之后被移除。
+8. 没有块级作用域：if语句中的变量声明会将变量添加到当前的执行环境中。
+  if (ture){
+    var color ="blue";
+}
+
+alert(color);  //"blue"
+
+for语句创建的变量i即使在for循环结束后，也依旧会存在于循环外部的执行环境中。
+  for(var i = 0; i < 10; i ++ ){
+  doSomething(i);
+  }
   
+  alert(i);  //10
   
+9. 声明变量：使用var声明的变量会自动添加到最接近的环境中。
+example：
+
+function add (num1, num2){
+  sum = sum1 + sum2;
+  return sum;
+}
+var result = add(10, 20);  //30
+alert(sum);   //由于sum不是有效的变量，因此会导致错误
+
+
+function add(num1,num2){
+sum = num1+num2;
+}
+var result(10,20); //30
+alert(sum);         //30
+没有使用关键字，当调用完add()后，添加到全局环境中的变量sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。
+
+
