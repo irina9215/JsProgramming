@@ -28,3 +28,30 @@ Learning Note
     alert("name.age");
     
 结果：undefined
+6.作用域链scope chain：保证对执行环境有权访问的所变量和函数的有序访问。
+  标识符解析：沿着作用域链一级一级的搜索标识符的过程。
+  var color = "blue";
+  
+  function changeColor(){
+    var anotherColor = "red";
+    
+    function swapColors(){
+        var tempColor = anotherColor;
+        anotherColor = color;
+        color = tempColor;
+        
+        //这里可以访问color、anotherColor和tempColor
+    }
+    
+    //这里可以访问color和anotherColor，但不能访问tempColor
+    swapColors();
+  }
+  
+  //这里只能访问color
+  changeColor();
+  
+  changeColor();
+  
+  alert("Color is now " + color);
+  
+  
