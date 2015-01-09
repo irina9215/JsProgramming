@@ -87,4 +87,9 @@ var result(10,20); //30
 alert(sum);         //30
 没有使用关键字，当调用完add()后，添加到全局环境中的变量sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。
 
-
+10. 查询标识符：搜索过程从作用域链的前端开始，向上逐级查询于给定名字匹配的标识符。搜索过程将一直追溯到全局环境的变量对象。
+    var = color = "blue";
+    function getColor(){
+    return color;
+}
+alert(getColor()); //"blue"
