@@ -11,7 +11,7 @@ Learning Note
     浏览器改变大小时出发onresize事件
 2. life cycle 生命周期
 3. 脚本层次 script level （位于任何函数或者任何代码之外）   
-   是脚本的最上层，就在<script>标签里。被视为全局的，生命周期与脚本一样，而且能被任何页面内的代码访问
+   是脚本的最上层，就在<script></script>标签里。被视为全局的，生命周期与脚本一样，而且能被任何页面内的代码访问
 4. 数组
    value 与 具有唯一性的key，需要以key访问value。key通常以0开始，逐次加一。数字编号键又被称为索引index。
    二维数组：数组里的数组，具有行与列的列表。table。
@@ -93,3 +93,14 @@ alert(sum);         //30
     return color;
 }
 alert(getColor()); //"blue"
+11. 循环引用：对象A包含一个指向对象B 的指针，而对象B也包含对象A的引用。
+    且IE中一部分对象并不是元素javascript对象，例如BOM和DOM是使用C++以COM对象的形式实现的，儿COM 垃圾收集机制是引用计数策略。只要在IE中涉及COM对象，就会存在循环引用问题：
+    var element = document.getElementById("some_element");
+    var myObject = new Obejct();
+    myObject.element = element;
+    element.someObject = myObject;
+即使将DOM元素（element）移除，它也永远不会被回收。
+怎么避免：
+    在不使用它们的时候，手工断开原生javascript对象和DOM元素之间的连接。
+    myObject.element = null;
+    element.someObject = null;
