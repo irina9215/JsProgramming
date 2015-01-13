@@ -19,8 +19,8 @@ Learning Note
    可以对引用类型动态添加属性：
 
    var person = new Object;<br>
-   person.name = "irina";
-   alert(person.name);
+   person.name = "irina";<br>
+   alert(person.name);<br>
 结果：irina
 
     不能给基本类型添加属性：
@@ -105,35 +105,35 @@ alert(getColor()); //"blue"
 11. 循环引用：对象A包含一个指向对象B 的指针，而对象B也包含对象A的引用。
     且IE中一部分对象并不是元素javascript对象，例如BOM和DOM是使用C++以COM对象的形式实现的，儿COM 垃圾收集机制是引用计数策略。只要在IE中涉及COM对象，就会存在循环引用问题：
 
-    var element = document.getElementById("some_element");
-    var myObject = new Obejct();
-    myObject.element = element;
-    element.someObject = myObject;
+    var element = document.getElementById("some_element");<br>
+    var myObject = new Obejct();<br>
+    myObject.element = element;<br>
+    element.someObject = myObject;<br>
     
 即使将DOM元素（element）移除，它也永远不会被回收。
 
 怎么避免：
     在不使用它们的时候，手工断开原生javascript对象和DOM元素之间的连接。
     
-    myObject.element = null;
-    element.someObject = null;
+    myObject.element = null;<br>
+    element.someObject = null;<br>
 
 12. Object 类型：
     创建object实例的方式有两种：
     第一种是使用new操作符后跟Object构造函数
 
-    var person = new Object();
-    person.name = "nicholas";
-    person.age = 29;
+    var person = new Object();<br>
+    person.name = "nicholas";<br>
+    person.age = 29;<br>
     
     第二种方法是使用对象字面量表示法
     
-    var person = {
+    var person = {<br>
     
-        name : "nicholas",
-        age : 29
+        name : "nicholas",<br>
+        age : 29<br>
         
-    };
+    };<br>
     
 13. Array类型：
     数组的length属性，不是只读的，可以通过设置这个属性，从数组的末尾移除项或者添加新项。
