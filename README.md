@@ -4,7 +4,7 @@ JsProgramming
 
 Learning Note
 
-1. <h1>浏览器适应：</h1>
+1. 浏览器适应：
     docunment.body.clientHeight  客户端窗口的高度
     docunment.body.clientWidth   客户端窗口的宽度
     通过元素ID取得元素再取元素的样式，然后进行更改
@@ -18,7 +18,7 @@ Learning Note
 5. 变量
    可以对引用类型动态添加属性：
 
-   var person = new Object;
+   var person = new Object;<br>
    person.name = "irina";
    alert(person.name);
 结果：irina
@@ -60,46 +60,46 @@ Learning Note
 
 8. 没有块级作用域：if语句中的变量声明会将变量添加到当前的执行环境中。
 
-  if (ture){
-    var color ="blue";
-}
+  if (ture){<br>
+    var color ="blue";<br>
+}<br>
 
-alert(color);  //"blue"
+alert(color);  //"blue"<br>
 
 for语句创建的变量i即使在for循环结束后，也依旧会存在于循环外部的执行环境中。
 
-  for(var i = 0; i < 10; i ++ ){
-  doSomething(i);
-  }
+  for(var i = 0; i < 10; i ++ ){<br>
+  doSomething(i);<br>
+  }<br>
   
-  alert(i);  //10
+  alert(i);  //10<br>
   
 9. 声明变量：使用var声明的变量会自动添加到最接近的环境中。
 
 example：
 
-function add (num1, num2){
-  sum = sum1 + sum2;
-  return sum;
-}
-var result = add(10, 20);  //30
-alert(sum);   //由于sum不是有效的变量，因此会导致错误
+function add (num1, num2){<br>
+  sum = sum1 + sum2;<br>
+  return sum;<br>
+}<br>
+var result = add(10, 20);  //30<br>
+alert(sum);   //由于sum不是有效的变量，因此会导致错误<br>
 
 
-function add(num1,num2){
-sum = num1+num2;
-}
-var result(10,20); //30
-alert(sum);         //30
+function add(num1,num2){<br>
+sum = num1+num2;<br>
+}<br>
+var result(10,20); //30<br>
+alert(sum);         //30<br>
 
 没有使用关键字，当调用完add()后，添加到全局环境中的变量sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。
 
 10. 查询标识符：搜索过程从作用域链的前端开始，向上逐级查询于给定名字匹配的标识符。搜索过程将一直追溯到全局环境的变量对象。
 
-    var = color = "blue";
-    function getColor(){
-    return color;
-}
+    var = color = "blue";<br>
+    function getColor(){<br>
+    return color;<br>
+}<br>
 alert(getColor()); //"blue"
 
 11. 循环引用：对象A包含一个指向对象B 的指针，而对象B也包含对象A的引用。
