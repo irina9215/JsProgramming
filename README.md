@@ -137,3 +137,15 @@ Learning Note
     
 13. Array类型：
     数组的length属性，不是只读的，可以通过设置这个属性，从数组的末尾移除项或者添加新项。
+14. function 类型：
+    函数声明方法定义：
+
+    function sum (num1,num2){
+        return num1+num2;
+    }
+    
+    函数表达式定义函数：
+    
+    var sum = function(num1,num2){
+        return num1+num2;
+    };
