@@ -140,12 +140,12 @@ Learning Note
 14. function 类型：
     函数声明方法定义：
 
-    function sum (num1,num2){
-        return num1+num2;
-    }
+    function sum (num1,num2){<br>
+        return num1+num2;<br>
+    }<br>
     
     函数表达式定义函数：
     
-    var sum = function(num1,num2){
-        return num1+num2;
-    };
+    var sum = function(num1,num2){<br>
+        return num1+num2;<br>
+    };<br>
