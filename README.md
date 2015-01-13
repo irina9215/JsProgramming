@@ -4,7 +4,7 @@ JsProgramming
 
 Learning Note
 
-1. 浏览器适应：
+1. <h1>浏览器适应：</h1>
     docunment.body.clientHeight  客户端窗口的高度
     docunment.body.clientWidth   客户端窗口的宽度
     通过元素ID取得元素再取元素的样式，然后进行更改
