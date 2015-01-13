@@ -17,6 +17,7 @@ Learning Note
    二维数组：数组里的数组，具有行与列的列表。table。
 5. 变量
    可以对引用类型动态添加属性：
+
    var person = new Object;
    person.name = "irina";
    alert(person.name);
@@ -56,6 +57,7 @@ Learning Note
   内部环境可以通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。
 7. 延长作用域链：在作用域链的前端临时增加一个变量对象，该变量会在代买执行之后被移除。
 8. 没有块级作用域：if语句中的变量声明会将变量添加到当前的执行环境中。
+
   if (ture){
     var color ="blue";
 }
@@ -70,6 +72,7 @@ for语句创建的变量i即使在for循环结束后，也依旧会存在于循�
   alert(i);  //10
   
 9. 声明变量：使用var声明的变量会自动添加到最接近的环境中。
+
 example：
 
 function add (num1, num2){
@@ -89,7 +92,7 @@ alert(sum);         //30
 没有使用关键字，当调用完add()后，添加到全局环境中的变量sum将继续存在；即使函数已经执行完毕，后面的代码依旧可以访问它。
 
 10. 查询标识符：搜索过程从作用域链的前端开始，向上逐级查询于给定名字匹配的标识符。搜索过程将一直追溯到全局环境的变量对象。
-11. 
+
     var = color = "blue";
     function getColor(){
     return color;
@@ -112,3 +115,22 @@ alert(getColor()); //"blue"
     myObject.element = null;
     element.someObject = null;
 
+12. Object 类型：
+    创建object实例的方式有两种：
+    第一种是使用new操作符后跟Object构造函数
+
+    var person = new Object();
+    person.name = "nicholas";
+    person.age = 29;
+    
+    第二种方法是使用对象字面量表示法
+    
+    var person = {
+    
+        name : "nicholas",
+        age : 29
+        
+    };
+    
+13. Array类型：
+    数组的length属性，不是只读的，可以通过设置这个属性，从数组的末尾移除项或者添加新项。
