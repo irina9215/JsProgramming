@@ -136,7 +136,7 @@ Learning Note
     };<br>
     
 13. Array类型：
-    数组的length属性，不是只读的，可以通过设置这个属性，从数组的末尾移除项或者添加新项。
+    数组的length属性，不是只读的，可以通过设置这个属性，从数组的末尾移除项或者添加新项。<br>
 14. function 类型：
     函数声明方法定义：
 
@@ -149,5 +149,30 @@ Learning Note
     var sum = function(num1,num2){<br>
         return num1+num2;<br>
     };<br>
-15.函数声明与函数表达式的区别：解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；<br>
+15. 函数声明与函数表达式的区别：解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；<br>
     函数表达式，则必须等到解析器执行到它所在的的代码行，才会被解释执行。<br>
+16. 作为值的函数：不仅能够像传递参数一样把一个函数传递给另外一个函数，而且可以将函数作为另外一个函数的结果返回。<br>
+    
+    function callSomeFunction (someFunction, someArgument){<br>
+        return someFunction(someArgument);<br>
+        }<br>
+17. 函数的内部属性：argument 和 this <br>
+    argument 有一个属性callee，是指向该argument 对象函数的指针；例子：<br>
+    function factorial(num) {<br>
+        if (num <= 1){<br>
+            return 1;<br>
+        } else {<br>
+            return num*factorial(num-1);<br>
+            }<br>
+    }<br>
+    这个函数的执行和函数名factorial紧紧耦合，为消除这种耦合，改为：<br>
+
+     function factorial(num) {<br>
+        if (num <= 1){<br>
+            return 1;<br>
+        } else {<br>
+            return num*argument.callee(num-1);<br>
+            }<br>
+    }<br>
+    
+    无论引用函数时使用什么名字都可以保证递归调用。<br>
