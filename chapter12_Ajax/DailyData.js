@@ -1,5 +1,7 @@
 $(function (){
+  
   getAirDayData();
+  
 });
 
 function getAirDayData() {
@@ -25,6 +27,7 @@ function getAirDayData() {
         
          $('#lblDate1').html(date);
          $('#lblDate2').html('（' + date + '）');
+         
       }
       
       genAreaAQIShow(result.Head);
